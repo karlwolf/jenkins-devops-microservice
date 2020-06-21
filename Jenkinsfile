@@ -33,6 +33,12 @@ pipeline {
 			}
 		}
 
+		stage('Install'){
+			steps{
+				sh 'mvn install -DskipTests'
+			}
+		}		
+
 		stage('Build Docker Image'){
 			steps{
 				//"docker build -t karlpwolf/currency-exchange-devops:$env.BUILD_TAG"
